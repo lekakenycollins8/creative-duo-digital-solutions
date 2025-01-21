@@ -4,12 +4,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/theme-provider";
-import Index from "./pages/Index";
-import PortfolioPage from "./pages/PortfolioPage";
-import ServicesPage from "./pages/ServicesPage";
-import SkillsTimelinePage from "./pages/SkillsTimelinePage";
-import PricingPage from "./pages/PricingPage";
-import AboutPage from "./pages/AboutPage";
+import Index from "./pages";
+import PortfolioPage from "./pages/portfolio";
+import ServicesPage from "./pages/services";
+import SkillsTimelinePage from "./pages/skillstimeline";
+import PricingPage from "./pages/pricing";
+import AboutPage from "./pages/about";
 
 const queryClient = new QueryClient();
 
