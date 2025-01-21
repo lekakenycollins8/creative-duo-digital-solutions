@@ -40,7 +40,7 @@ const Navbar = () => {
             <a href="/AboutPage" className="text-muted-foreground hover:text-primary transition-colors">About</a>
             <ThemeToggle />
             <a
-              href="#contact"
+              href="/#contact"
               className="bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-2 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
             >
               Contact Us
