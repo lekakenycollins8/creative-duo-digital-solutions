@@ -1,40 +1,40 @@
-import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
-import { useForm } from '@formspree/react';
-import { useState } from 'react';
-import { Alert, AlertTitle, AlertDescription } from './ui/alert';
+import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter } from "lucide-react"
+import { useForm } from "@formspree/react"
+import { useState } from "react"
+import { Alert, AlertTitle, AlertDescription } from "./ui/alert"
+
+import MapComponent from "./MapComponent";
 
 const Contact = () => {
   const socialLinks = [
     { Icon: Instagram, href: "https://www.instagram.com/creativesolutions_25/#" },
     { Icon: Linkedin, href: "https://www.linkedin.com/in/lekakenycollins8/" },
     { Icon: Twitter, href: "https://x.com/leky_reborn" },
-  ];
-  const [state, handleSubmit] = useForm("xzzzwgdb");
+  ]
+  const [state, handleSubmit] = useForm("xzzzwgdb")
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+    name: "",
+    email: "",
+    message: "",
+  })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+      [e.target.name]: e.target.value,
+    })
+  }
 
   if (state.succeeded) {
     return (
-    <div>
-      <Alert variant="default">
-        <AlertTitle>Success!</AlertTitle>
-        <AlertDescription>
-          Thanks for reaching out! We&apos;ll get back to you soon.
-        </AlertDescription>
-      </Alert>
-    </div>
-  );
+      <div>
+        <Alert variant="default">
+          <AlertTitle>Success!</AlertTitle>
+          <AlertDescription>Thanks for reaching out! We&apos;ll get back to you soon.</AlertDescription>
+        </Alert>
+      </div>
+    )
   }
 
   return (
@@ -42,7 +42,7 @@ const Contact = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5 -z-10" />
       <div className="absolute w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl -top-48 -left-48 animate-pulse" />
       <div className="absolute w-[500px] h-[500px] bg-accent/10 rounded-full blur-3xl -bottom-48 -right-48 animate-pulse" />
-      
+
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -62,7 +62,7 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Email Us</h3>
                 <a href="mailto:lemisogideon@gmail.com">
-                <p className="text-gray-600">lemisogideon@gmail.com</p>
+                  <p className="text-gray-600">lemisogideon@gmail.com</p>
                 </a>
               </div>
             </div>
@@ -103,9 +103,19 @@ const Contact = () => {
                 ))}
               </div>
             </div>
+
+            <div className="pt-8">
+              <h3 className="text-lg font-bold mb-4">Our Location</h3>
+              <div className="rounded-xl overflow-hidden shadow-lg h-[300px]">
+                <MapComponent />
+              </div>
+            </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6 bg-white/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/20">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6 bg-white/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/20"
+          >
             <div>
               <input
                 type="text"
@@ -148,7 +158,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 export default Contact;
