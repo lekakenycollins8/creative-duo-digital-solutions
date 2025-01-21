@@ -9,26 +9,27 @@ interface TimelineItem {
 
 const timelineData: TimelineItem[] = [
   {
+    year: '2025',
+    title: 'Freelancing and Agency Growth',
+    description: 'Built a blog website for portfolio development and expanded the agency’s focus on full-stack applications, API integrations, and website design.',
+  },
+  {
     year: '2024',
-    title: 'Digital Innovation Award',
-    description: 'Recognized for groundbreaking digital solutions and creative excellence.',
+    title: 'Tutoring App Development',
+    description: 'Designed and implemented a tutoring web application using React and Node.js, successfully launching it in two weeks.',
   },
   {
     year: '2023',
-    title: 'Global Expansion',
-    description: 'Opened new offices in major tech hubs across Europe and Asia.',
+    title: 'Technical Skills Enhancement',
+    description: 'Learned JavaScript, React, and PostgreSQL while working on collaborative end-to-end applications, laying the foundation for future projects.',
   },
   {
     year: '2022',
-    title: 'Industry Leadership',
-    description: 'Became the leading creative agency in sustainable design practices.',
-  },
-  {
-    year: '2020',
-    title: 'Company Foundation',
-    description: 'Started our journey with a vision to transform digital experiences.',
+    title: 'Journey to Software Development',
+    description: 'Embarked on the path to becoming a software developer, driven by a passion for solving real-world challenges through technology.',
   },
 ];
+
 
 const Timeline = () => {
   const containerRef = useRef<HTMLDivElement>(null);
