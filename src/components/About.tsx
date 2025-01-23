@@ -2,7 +2,7 @@
 const teamMembers = [
   {
     name: "Gideon Lemiso",
-    role: "Full-Stack developer/Mobile app develpoer",
+    role: "Full-Stack developer/Mobile app developer",
     image: "https://media-hosting.imagekit.io//ed02bd5dbfcb4c7f/giddy.jpg?Expires=1831556093&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=yZzLY5rN~NSQaMRCsohy~tBswJrVgMAWJXc~6m9CFuHz7Gp6QIhYoFToleoWlr5WPu-12RyteB4zmjY9dzRsOhLTzp6uX96wsZ2FBP8N0ketouw2lOoVgBqDhP1ezfWh0Tiqabtx9Nj-GtDGHAOvKb-BqscrKLvhQOIMoFNfk~z4eXRV6-FSG2rS573mMZ4QKCfZamjTQVIQF7vegHVSwj2z0oS~JNnpCKqCY8XHXh7lhpG0tlqbuXrsCXFcKM0UpZBiqW9xz3FsliXOfvyw4TLSQzz65-UnqXZSZ-ZZHp3B9iQpmjGbIuNUwA0c~VqVGmyLPTC9c~IKzFB~m8OpOw__",
   },
   {
