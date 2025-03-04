@@ -1,3 +1,4 @@
+import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,10 +11,12 @@ import ServicesPage from "./pages/services";
 import SkillsTimelinePage from "./pages/skillstimeline";
 import PricingPage from "./pages/pricing";
 import AboutPage from "./pages/about";
-
+import DomainRegistration from "./pages/domain-registration.tsx";
+import HostingPlans from "./pages/hosting-plans.tsx";
 const queryClient = new QueryClient();
 
 const App = () => (
+  <HelmetProvider>
   <ThemeProvider defaultTheme="system" storageKey="app-theme">
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -27,11 +30,15 @@ const App = () => (
             <Route path="/SkillsTimelinePage" element={<SkillsTimelinePage />} />
             <Route path="/PricingPage" element={<PricingPage />} />
             <Route path="/AboutPage" element={<AboutPage />} />
+            <Route path="/DomainRegistration" element={<DomainRegistration />} />
+            <Route path="/HostingPlans" element={<HostingPlans />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
   </ThemeProvider>
+  </HelmetProvider>
 );
 
 export default App;
+  

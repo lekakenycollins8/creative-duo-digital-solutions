@@ -38,6 +38,8 @@ const Navbar = () => {
             <a href="/SkillsTimelinePage" className="text-muted-foreground hover:text-primary transition-colors">Skills & Timeline</a>
             <a href="/PricingPage" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a>
             <a href="/AboutPage" className="text-muted-foreground hover:text-primary transition-colors">About</a>
+            <a href="/DomainRegistration" className="text-muted-foreground hover:text-primary transition-colors">Domain Registration</a>
+            <a href="/HostingPlans" className="text-muted-foreground hover:text-primary transition-colors">Hosting Plans</a>
             <ThemeToggle />
             <a
               href="/#contact"
@@ -56,6 +58,8 @@ const Navbar = () => {
             <a href="/SkillsTimelinePage" className="block text-muted-foreground hover:text-primary transition-colors">Skills & Timeline</a>
             <a href="/PricingPage" className="block text-muted-foreground hover:text-primary transition-colors">Pricing</a>
             <a href="/AboutPage" className="block text-muted-foreground hover:text-primary transition-colors">About</a>
+            <a href="/DomainRegistration" className="block text-muted-foreground hover:text-primary transition-colors">Domain Registration</a>
+            <a href="/HostingPlans" className="block text-muted-foreground hover:text-primary transition-colors">Hosting Plans</a>
             <a
               href="#contact"
               className="block bg-gradient-to-r from-primary to-accent text-primary-foreground px-6 py-2 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
