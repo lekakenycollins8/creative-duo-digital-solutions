@@ -102,6 +102,26 @@ html {
   }
 }
 
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(10, 10, 122, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 10, 122, 0.05) 1px, transparent 1px);
+}
+
+
 /* Reusable Animation Classes */
 .animate-float {
   animation: float 6s ease-in-out infinite;

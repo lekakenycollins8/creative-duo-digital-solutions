@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Calendar, ArrowRight } from 'lucide-react';
 
 interface TimelineItem {
   year: string;
@@ -11,7 +12,7 @@ const timelineData: TimelineItem[] = [
   {
     year: '2025',
     title: 'Freelancing and Agency Growth',
-    description: 'Built a blog website for portfolio development and expanded the agency’s focus on full-stack applications, API integrations, and website design.',
+    description: 'Built a blog website for portfolio development and expanded the agency\'s focus on full-stack applications, API integrations, and website design.',
   },
   {
     year: '2024',
@@ -30,53 +31,71 @@ const timelineData: TimelineItem[] = [
   },
 ];
 
-
 const Timeline = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="timeline" className="py-20 bg-secondary/30">
+    <section id="timeline" className="py-24 bg-gradient-to-b from-secondary/5 to-background">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <span className="inline-block px-4 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary mb-4">
+            OUR STORY
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            Our Journey
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Explore our milestones and achievements throughout the years.
           </p>
         </motion.div>
 
-        <div ref={containerRef} className="relative max-w-4xl mx-auto">
+        <div ref={containerRef} className="relative max-w-5xl mx-auto">
           {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-border" />
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary/30 to-secondary/30 rounded-full md:transform md:-translate-x-1/2" />
 
           {timelineData.map((item, index) => (
             <motion.div
               key={item.year}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className={`relative flex items-center mb-12 ${
-                index % 2 === 0 ? 'justify-start' : 'justify-end'
-              } md:flex-row-reverse md:justify-center gap-8`}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: index * 0.2, ease: "easeOut" }}
+              className="group relative mb-16 last:mb-0"
             >
-              {/* Timeline dot */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full custom-gradient" />
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                {/* Timeline dot with ripple effect */}
+                <div className="absolute left-8 md:left-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center border-4 border-primary/20 md:transform md:-translate-x-1/2 z-10 group-hover:scale-110 transition-all duration-300">
+                  <span className="w-2 h-2 bg-primary rounded-full group-hover:w-3 group-hover:h-3 transition-all duration-300"></span>
+                  <span className="absolute w-12 h-12 rounded-full border border-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-700"></span>
+                </div>
 
-              {/* Content */}
-              <div className={`w-full md:w-[calc(50%-2rem)] ${
-                index % 2 === 0 ? 'md:text-right' : 'md:text-left'
-              }`}>
-                <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                  <span className="inline-block px-3 py-1 rounded-full text-sm font-medium custom-gradient text-white mb-3">
-                    {item.year}
-                  </span>
-                  <h3 className="text-xl font-bold mb-2 gradient-text">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
+                {/* Year badge - positioned differently on mobile vs desktop */}
+                <div className={`ml-16 md:ml-0 md:absolute md:w-32 ${
+                  index % 2 === 0 ? 'md:right-1/2 md:mr-20 md:text-right' : 'md:left-1/2 md:ml-20'
+                } md:top-0 md:mt-1`}>
+                  <div className="flex items-center md:justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-300">
+                    <Calendar className="w-4 h-4" />
+                    <span className="font-bold">{item.year}</span>
+                  </div>
+                </div>
+
+                {/* Content card */}
+                <div className={`ml-16 md:ml-0 w-full md:w-5/12 ${
+                  index % 2 === 0 ? 'md:mr-auto md:pr-24' : 'md:ml-auto md:pl-24'
+                }`}>
+                  <div className="bg-white dark:bg-slate-800 p-6 md:p-8 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700">
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>

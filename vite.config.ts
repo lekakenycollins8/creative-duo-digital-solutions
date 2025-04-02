@@ -21,4 +21,7 @@ export default defineConfig(({ mode }) => ({
     loader: "jsx",
     include: /src\/.*\.[tj]sx?$/, // Ensure JSX and TSX files are included
   },
+  optimizeDeps: {
+    force: true
+  }
 }));
