@@ -68,7 +68,7 @@ const ServicesPage = () => {
 
       {/* Hero Section */}
       {/* Services Section */}
-      <div className="relative py-16 md:py-24 mt-16 bg-gradient-to-b from-background via-primary/5 to-background">
+      <div className="relative py-16 md:py-24 bg-gradient-to-b from-background via-primary/5 to-background">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-dot-pattern opacity-10" />
           <motion.div 
@@ -84,7 +84,7 @@ const ServicesPage = () => {
             <motion.h1 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-4xl md:text-5xl font-bold gradient-text font-['Playfair_Display'] leading-tight"
+              className="text-4xl md:text-5xl font-bold mb-2 gradient-text font-['Playfair_Display'] leading-tight"
             >
               Transformative Digital Solutions
             </motion.h1>

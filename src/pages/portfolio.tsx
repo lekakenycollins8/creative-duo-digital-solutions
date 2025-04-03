@@ -22,41 +22,65 @@ const PortfolioPage = () => {
         <meta name="keywords" content="portfolio, web development, design, projects, case studies" />
       </Helmet>
 
-     {/* Portfolio Section */}
-      <div className="relative min-h-[40vh] py-16 md:py-24 mt-16 overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -top-32 -left-32 animate-pulse" />
-          <div className="absolute w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl -bottom-32 -right-32 animate-pulse" />
-          <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-          <motion.div 
-            className="absolute top-1/3 left-1/4"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          >
-            <Palette className="w-16 h-16 text-primary/20" />
-          </motion.div>
-        </div>
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold mb-6 gradient-text font-['Playfair_Display'] leading-tight"
-            >
-              Creative Showcase Gallery
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}
-              className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto font-['Inter'] leading-relaxed"
-            >
-              Explore our digital canvas of innovation - where technology meets artistic vision to create remarkable digital experiences.
-            </motion.p>
-            <div className="absolute top-1/4 right-20 w-24 h-24 border-2 border-accent/20 rounded-full animate-spin-slow" />
+    {/* Portfolio Section */}
+    <div className="relative min-h-[40vh] py-12 md:py-24 overflow-hidden">
+       <div className="absolute inset-0 -z-10">
+      <div className="absolute w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -top-32 -left-32 animate-pulse" />
+      <div className="absolute w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl -bottom-32 -right-32 animate-pulse" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+      {/* Added multiple floating elements */}
+      <motion.div 
+        className="absolute top-1/3 left-1/4"
+        animate={{ rotate: 360, scale: [1, 1.1, 1] }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+      >
+        <Palette className="w-16 h-16 text-primary/20" />
+      </motion.div>
+      {/* Added geometric shapes */}
+      <div className="absolute top-1/4 left-3/4 w-32 h-32 border-2 border-primary/20 rotate-45 animate-bounce-slow" />
+      <div className="absolute bottom-1/4 left-1/6 w-16 h-16 bg-accent/10 rounded-lg animate-float" />
+       </div>
+       <div className="container mx-auto px-4 max-w-6xl">
+      <div className="max-w-4xl mx-auto text-center space-y-6">
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl md:text-5xl font-bold mb-2 gradient-text font-['Playfair_Display'] leading-tight"
+        >
+          Creative Showcase Gallery
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto font-['Inter'] leading-relaxed"
+        >
+          Explore our digital canvas of innovation - where technology meets artistic vision to create remarkable digital experiences.
+        </motion.p>
+        {/* Added stats section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="flex justify-center gap-8 mt-8"
+        >
+          <div className="text-center">
+         <h3 className="text-3xl font-bold gradient-text">50+</h3>
+         <p className="text-sm text-foreground/70">Projects Completed</p>
           </div>
-        </div>
+          <div className="text-center">
+         <h3 className="text-3xl font-bold gradient-text">98%</h3>
+         <p className="text-sm text-foreground/70">Client Satisfaction</p>
+          </div>
+          <div className="text-center">
+         <h3 className="text-3xl font-bold gradient-text">5+</h3>
+         <p className="text-sm text-foreground/70">Years Experience</p>
+          </div>
+        </motion.div>
+        <div className="absolute top-1/4 right-20 w-24 h-24 border-2 border-accent/20 rounded-full animate-spin-slow" />
       </div>
+       </div>
+     </div>
       {/* Portfolio Section */}
       <Portfolio />
 

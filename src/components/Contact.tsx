@@ -45,10 +45,10 @@ const Contact = () => {
 
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-serif font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-4xl font-serif font-bold mb-4 bg-gradient-to-r from-sky-700 to-sky-700 bg-clip-text text-transparent">
             Get in Touch
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Ready to start your next project? Contact us today and let's create something amazing together.
           </p>
         </div>
@@ -62,7 +62,7 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Email Us</h3>
                 <a href="mailto:lemisogideon@gmail.com">
-                  <p className="text-gray-600">lemisogideon@gmail.com</p>
+                  <p className="text-muted-foreground">lemisogideon@gmail.com</p>
                 </a>
               </div>
             </div>
@@ -73,7 +73,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Call Us</h3>
-                <p className="text-gray-600">+254 745 113 186 or +254 702 274 352</p>
+                <p className="text-muted-foreground">+254 745 113 186 or +254 702 274 352</p>
               </div>
             </div>
 
@@ -150,7 +150,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={state.submitting}
-              className="w-full bg-gradient-to-r from-primary to-accent text-white px-8 py-4 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              className="w-full bg-gradient-to-r from-sky-700 to-sky-400 text-white px-8 py-4 rounded-xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               Send Message
             </button>

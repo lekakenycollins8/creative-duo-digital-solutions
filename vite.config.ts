@@ -20,8 +20,5 @@ export default defineConfig(({ mode }) => ({
   esbuild: {
     jsxInject: `import React from 'react'`,
     include: /src\/.*\.[tj]sx?$/, // Ensure JSX and TSX files are included
-  },
-  optimizeDeps: {
-    force: true
   }
 }));

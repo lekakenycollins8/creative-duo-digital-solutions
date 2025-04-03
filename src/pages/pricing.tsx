@@ -23,7 +23,7 @@ const PricingPage = () => {
       </Helmet>
 
       {/* Pricing Section */}
-      <div className="relative py-16 md:py-24 mt-16 overflow-hidden">
+      <div className="relative py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl -top-48 -left-48" />
           <div className="absolute inset-0 bg-grid-pattern opacity-5" />
@@ -40,7 +40,7 @@ const PricingPage = () => {
             <motion.h1
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="text-4xl md:text-5xl font-bold gradient-text font-['Playfair_Display'] leading-tight"
+              className="text-4xl md:text-5xl font-bold mb-2 gradient-text font-['Playfair_Display'] leading-tight"
             >
               Value-Driven Investment Plans
             </motion.h1>

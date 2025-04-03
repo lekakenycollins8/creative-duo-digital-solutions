@@ -74,20 +74,25 @@ const Hero = () => {
         {/* Floating tech icons */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {icons.map(({ Icon, color, delay, x, y }, index) => (
-            <div
-              key={index}
-              className="absolute left-1/2 top-1/2 transition-transform duration-300 ease-out"
-              style={{ transform: calculateTransform(x, y) }}
-            >
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: delay, duration: 0.5 }}
-                className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center shadow-lg`}
-              >
-                <Icon className="w-8 h-8 text-white" />
-              </motion.div>
-            </div>
+        <div
+          key={index}
+          className="absolute left-1/2 top-1/2 transition-transform duration-300 ease-out"
+          style={{ 
+            transform: calculateTransform(
+          window.innerWidth <= 640 ? x * 0.5 : x, 
+          window.innerWidth <= 640 ? y * 0.5 : y
+            ) 
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: delay, duration: 0.5 }}
+            className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center shadow-lg`}
+          >
+            <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+          </motion.div>
+        </div>
           ))}
         </div>
 
@@ -99,7 +104,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.p
-            className="text-xl text-foreground/80 mb-8 leading-relaxed font-['Inter']"
+            className="text-xl text-foreground/80 mb-8 leading-relaxed font-['Inter'] font-extrabold"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
@@ -147,15 +152,15 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <div className="text-center">
-              <div className="text-4xl font-bold gradient-text mb-1 font-['Playfair_Display']">50+</div>
+              <div className="text-4xl font-bold gradient-text mb-1 font-['Playfair_Display']">20+</div>
               <div className="text-foreground/60 text-sm font-['Inter']">Projects Completed</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold gradient-text mb-1 font-['Playfair_Display']">30+</div>
+              <div className="text-4xl font-bold gradient-text mb-1 font-['Playfair_Display']">10+</div>
               <div className="text-foreground/60 text-sm font-['Inter']">Happy Clients</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold gradient-text mb-1 font-['Playfair_Display']">5+</div>
+              <div className="text-4xl font-bold gradient-text mb-1 font-['Playfair_Display']">3+</div>
               <div className="text-foreground/60 text-sm font-['Inter']">Years Experience</div>
             </div>
           </motion.div>
