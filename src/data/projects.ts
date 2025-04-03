@@ -8,7 +8,7 @@ export const projects = [
       client: "Brighter-World Programme",
       duration: "4 months",
       technologies: ["React", "Node.js", "MongoDB"],
-      link: "https://brighter-programme.vercel.app",
+      link: "https://brighterworldltd.com/",
       gallery: [
         "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=800&q=80", // People discussing finances
         "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80", // Small shop owner

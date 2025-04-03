@@ -22,17 +22,8 @@ const SkillsTimelinePage = () => {
         <Skills />
 
         {/* Timeline Section */}
-        <section className="mt-24 space-y-16">
+        <section className="space-y-16">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-12">
-              <h2 className="text-3xl font-semibold mb-4 flex items-center gap-3">
-                <span className="w-6 h-6 bg-accent rounded-full" />
-                Our Journey
-              </h2>
-              <p className="text-muted-foreground">
-                Tracing the key achievements and milestones that have defined our trajectory.
-              </p>
-            </div>
             <Timeline />
           </div>
         </section>
