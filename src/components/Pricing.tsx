@@ -57,7 +57,7 @@ const pricingTiers: PricingTier[] = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-20 bg-background">
+    <section id="pricing" className="py-10 bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
