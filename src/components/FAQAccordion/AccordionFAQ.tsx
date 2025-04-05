@@ -8,7 +8,7 @@ import { ChevronDown } from 'lucide-react'
 const FAQs = [
   {
     question: "How much do you charge for a project?",
-    answer: "My pricing varies based on the project's scope and requirements. Contact me for a customized quote."
+    answer: "Our pricing varies based on the project's scope and requirements. Contact me for a customized quote."
   },
   {
     question: "Are there additional costs beyond the quoted price?",
@@ -16,15 +16,15 @@ const FAQs = [
   },
   {
     question: "Do you provide progress updates during the project?",
-    answer: "Yes, I provide regular updates and share milestones to ensure transparency throughout the process."
+    answer: "Yes, We provide regular updates and share milestones to ensure transparency throughout the process."
   },
   {
     question: "Do you provide maintenance after project completion?",
-    answer: "Yes, I offer post-launch maintenance and support plans for all my projects."
+    answer: "Yes, We offer post-launch maintenance and support plans for all my projects."
   },
   {
     question: "Do you handle hosting and domain setup?",
-    answer: "Yes, I can assist with hosting, domain setup, and website deployment."
+    answer: "Yes, We can assist with hosting, domain setup, and website deployment."
   },
 ]
 
@@ -53,4 +53,4 @@ const FAQAccordion = () => {
   )
 }
 
-export default FAQAccordion
+export default FAQAccordion;
