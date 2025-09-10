@@ -1,23 +1,24 @@
 export const projects = [
   {
-    title: "Micro-finance Platform",
-    description: "A modern microfinance solution with seamless user experience",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80",
-    category: "Web Development",
-    details: {
-      client: "Brighter-World Programme",
-      duration: "4 months",
-      technologies: ["React", "Node.js", "MongoDB"],
-      link: "https://brighterworldltd.com/",
-      gallery: [
-        "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=800&q=80", // People discussing finances
-        "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80", // Small shop owner
-        ],
-        challenge:
-            "The client needed a secure and user-friendly website to showcase the different loan products the company offers to small business owners.",
-        solution:
-            "We developed a custom company website with a modern design, easy navigation, and integrated loan application forms. The site is fully responsive and optimized for search engines.",
-        },
+  title: "Kenyan By Blood Foundation Website",
+  description: "A modern, story-driven nonprofit website built to inspire hope, unity, and action through blood donation awareness.",
+  image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80", // symbolic healthcare/blood donation image
+  category: "Web Design & Development",
+  details: {
+    client: "Kenyan By Blood Foundation",
+    duration: "7 weeks",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    link: "https://iamkenyanbyblood.org/", 
+    gallery: [
+      "https://images.unsplash.com/photo-1576765608618-7e2f4a76f5e5?auto=format&fit=crop&w=800&q=80", // Volunteer donating blood
+      "https://images.unsplash.com/photo-1588776814546-ec2b4c15a42e?auto=format&fit=crop&w=800&q=80", // Smiling recipient
+      "https://images.unsplash.com/photo-1603398938378-751d6a7c6ef3?auto=format&fit=crop&w=800&q=80", // Hands joined/unity
+    ],
+    challenge:
+      "The organization needed a professional and emotionally impactful website that could clearly communicate their mission, attract donors and volunteers, and raise awareness on the urgent need for blood donations in Kenya.",
+    solution:
+      "We designed and developed a custom Next.js website with a modern, mobile-first design, storytelling-driven sections, and clear calls-to-action for donations and volunteering. The site uses the Kenyan flag colors (black, red, green, white) to reflect heritage, integrates animations for impact, and is structured for SEO to reach a wider audience and encourage action.",
+      },
   },
   {
     title: "Business Coaching Website",
@@ -28,7 +29,7 @@ export const projects = [
       client: "Jackier Training and Development",
       duration: "2 months",
       technologies: ["NextJs", "React", "TailwindCSS", "Shadcn UI"],
-      link: "https://jackiercoaching.com",
+      link: "https://jtd-coaching.vercel.app/",
       gallery: [
         "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80",
         "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
@@ -99,8 +100,28 @@ export const projects = [
       challenge:
         "Creating a platform that showcases tutors' expertise while making it easy for students to find and book sessions.",
       solution:
-        "We developed a portfolio-style website with integrated scheduling, payment processing, and video conferencing for remote tutoring sessions.",
+        "We developed a portfolio-style website with payment processing, and admin content management for the website resources relevant for students.",
     },
+  },
+  {
+    title: "Micro-finance Platform",
+    description: "A modern microfinance solution with seamless user experience",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80",
+    category: "Web Development",
+    details: {
+      client: "Brighter-World Programme",
+      duration: "4 months",
+      technologies: ["React", "Node.js", "MongoDB"],
+      link: "https://brighterworldltd.com/",
+      gallery: [
+        "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=800&q=80", // People discussing finances
+        "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800&q=80", // Small shop owner
+        ],
+        challenge:
+            "The client needed a secure and user-friendly website to showcase the different loan products the company offers to small business owners.",
+        solution:
+            "We developed a custom company website with a modern design, easy navigation, and integrated loan application forms. The site is fully responsive and optimized for search engines.",
+        },
   },
   {
     title: "Trip Log App",
@@ -182,27 +203,6 @@ export const projects = [
         "Developing a platform to connect farmers with investors and provide access to agricultural funding opportunities.",
       solution:
         "We built a comprehensive platform with project showcasing, secure payment processing, and progress tracking for agricultural ventures.",
-    },
-  },
-  {
-    title: "Software Agency Website",
-    description: "Empowering businesses with scalable software solutions",
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80", // Modern tech office space
-    category: "Web Development",
-    details: {
-      client: "CreativeDuo Digital Solutions",
-      duration: "2 weeks",
-      technologies: ["Vue.js", "Python", "PostgreSQL"],
-      link: "https://www.creativeduodigitalsolutions.com",
-      gallery: [
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80", // Team collaboration
-        "https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&w=800&q=80", // Developer workspace
-        "https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=800&q=80", // Tech solution presentation
-      ],
-      challenge:
-        "Creating a professional website that showcases the agency's expertise and attracts potential clients in a competitive market.",
-      solution:
-        "We designed a modern, interactive website with case studies, service showcases, and an integrated client portal for project management.",
     },
   },
 ]
