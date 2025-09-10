@@ -11,7 +11,8 @@ export const projects = [
     link: "https://iamkenyanbyblood.org/", 
     gallery: [
       "https://plus.unsplash.com/premium_photo-1682309704250-6bac0f499665?q=80&w=3012&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",  // Donor arm
-      "https://images.unsplash.com/photo-1683791895200-201c0c40310f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",  
+      "https://images.unsplash.com/photo-1683791895200-201c0c40310f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      ],
     challenge:
       "The foundation needed a digital presence that not only educates the public about blood donation but also emotionally engages donors and volunteers while reflecting Kenyan identity.",
     solution:
