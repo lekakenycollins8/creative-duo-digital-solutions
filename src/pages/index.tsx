@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
-import About from "@/components/About";
+// import About from "@/components/About";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Skills from "@/components/Skills";
@@ -18,7 +18,7 @@ const Index = () => {
       <Skills />
       <FAQAccordion />
       <Pricing />
-      <About />
+{/*       <About /> */}
       <Contact />
     </div>
   );
