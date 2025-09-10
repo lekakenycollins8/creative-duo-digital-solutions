@@ -1,8 +1,8 @@
 export const projects = [
   {
   title: "Kenyan By Blood Foundation Website",
-  description: "A modern, story-driven nonprofit website built to inspire hope, unity, and action through blood donation awareness.",
-  image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80", // symbolic healthcare/blood donation image
+  description: "A modern nonprofit platform that inspires hope, heritage, and empowerment by connecting Kenyans to life-saving blood donation initiatives.",
+  image: "https://images.unsplash.com/photo-1588775039850-20ec4a8640c2?auto=format&fit=crop&w=800&q=80", // Example: close-up of a donor arm
   category: "Web Design & Development",
   details: {
     client: "Kenyan By Blood Foundation",
@@ -10,15 +10,16 @@ export const projects = [
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     link: "https://iamkenyanbyblood.org/", 
     gallery: [
-      "https://images.unsplash.com/photo-1576765608618-7e2f4a76f5e5?auto=format&fit=crop&w=800&q=80", // Volunteer donating blood
-      "https://images.unsplash.com/photo-1588776814546-ec2b4c15a42e?auto=format&fit=crop&w=800&q=80", // Smiling recipient
-      "https://images.unsplash.com/photo-1603398938378-751d6a7c6ef3?auto=format&fit=crop&w=800&q=80", // Hands joined/unity
+      "https://images.unsplash.com/photo-1588775039850-20ec4a8640c2?auto=format&fit=crop&w=800&q=80",  // Donor arm
+      "https://images.unsplash.com/photo-1603988361572-6823b27468ca?auto=format&fit=crop&w=800&q=80",  // Blood donation setup
+      "https://images.unsplash.com/photo-1617196036490-8aad20c741b7?auto=format&fit=crop&w=800&q=80",  // Multiple donors
+      "https://images.unsplash.com/photo-1552728089-410087ccf0f2?auto=format&fit=crop&w=800&q=80"   // Blood bag in collection
     ],
     challenge:
-      "The organization needed a professional and emotionally impactful website that could clearly communicate their mission, attract donors and volunteers, and raise awareness on the urgent need for blood donations in Kenya.",
+      "The foundation needed a digital presence that not only educates the public about blood donation but also emotionally engages donors and volunteers while reflecting Kenyan identity.",
     solution:
-      "We designed and developed a custom Next.js website with a modern, mobile-first design, storytelling-driven sections, and clear calls-to-action for donations and volunteering. The site uses the Kenyan flag colors (black, red, green, white) to reflect heritage, integrates animations for impact, and is structured for SEO to reach a wider audience and encourage action.",
-      },
+      "We developed a custom, responsive Next.js website featuring immersive storytelling, powerful CTAs for donating and volunteering, and impactful imagery from the frontlines of blood donation. By using Kenya’s national colors (black, red, green, white), motion-driven engagement, and thoughtful design, the site conveys urgency, unity, and hope. SEO-ready structure ensures visibility for Kenyan blood donation keywords.",
+        },
   },
   {
     title: "Business Coaching Website",
