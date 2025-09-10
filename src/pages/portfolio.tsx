@@ -65,7 +65,7 @@ const PortfolioPage = () => {
           className="flex justify-center gap-8 mt-8"
         >
           <div className="text-center">
-         <h3 className="text-3xl font-bold gradient-text">50+</h3>
+         <h3 className="text-3xl font-bold gradient-text">20+</h3>
          <p className="text-sm text-foreground/70">Projects Completed</p>
           </div>
           <div className="text-center">
@@ -73,7 +73,7 @@ const PortfolioPage = () => {
          <p className="text-sm text-foreground/70">Client Satisfaction</p>
           </div>
           <div className="text-center">
-         <h3 className="text-3xl font-bold gradient-text">5+</h3>
+         <h3 className="text-3xl font-bold gradient-text">3+</h3>
          <p className="text-sm text-foreground/70">Years Experience</p>
           </div>
         </motion.div>
@@ -189,9 +189,9 @@ const PortfolioPage = () => {
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-bold mb-2 font-['Inter']">Award-Winning Projects</h3>
+            <h3 className="text-xl font-bold mb-2 font-['Inter']">Value-driven Projects</h3>
             <p className="text-foreground/70">
-              Our portfolio includes award-winning projects that have been recognized for their creativity and impact.
+              Our portfolio includes projects that have been recognized for their creativity and impact.
             </p>
           </div>
 
@@ -211,7 +211,7 @@ const PortfolioPage = () => {
             </div>
             <h3 className="text-xl font-bold mb-2 font-['Inter']">Sustainable Design</h3>
             <p className="text-foreground/70">
-              We are committed to sustainable design practices that minimize environmental impact.
+              We are committed to sustainable design practices that ensure longevity of solutions we provide.
             </p>
           </div>
         </div>
