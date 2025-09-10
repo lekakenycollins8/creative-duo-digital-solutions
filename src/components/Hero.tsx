@@ -1,177 +1,244 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ArrowRight, Code, Cpu, Database, Globe, Layers, Zap } from "lucide-react"
-import { motion } from "framer-motion"
+import { ArrowRight, Terminal, Database, Workflow, Sparkles, Play } from "lucide-react"
 
 const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [activeTerminal, setActiveTerminal] = useState(0)
+  const [typedText, setTypedText] = useState("")
+  const [currentLine, setCurrentLine] = useState(0)
+
+  const terminalCommands = [
+    "$ analyzing your business needs...",
+    "$ designing your custom solution...", 
+    "$ building and testing everything...",
+    "$ launching your new system...",
+    "✓ your business is now growing faster!"
+  ]
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
+    const command = terminalCommands[currentLine]
+    let index = 0
+    
+    const typeInterval = setInterval(() => {
+      if (index < command.length) {
+        setTypedText(command.slice(0, index + 1))
+        index++
+      } else {
+        clearInterval(typeInterval)
+        setTimeout(() => {
+          if (currentLine < terminalCommands.length - 1) {
+            setCurrentLine(currentLine + 1)
+            setTypedText("")
+          } else {
+            setTimeout(() => {
+              setCurrentLine(0)
+              setTypedText("")
+            }, 2000)
+          }
+        }, 1000)
+      }
+    }, 50)
 
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+    return () => clearInterval(typeInterval)
+  }, [currentLine])
 
-  const calculateTransform = (baseX, baseY, factor = 0.02) => {
-    const centerX = window.innerWidth / 2
-    const centerY = window.innerHeight / 2
-
-    const deltaX = (mousePosition.x - centerX) * factor
-    const deltaY = (mousePosition.y - centerY) * factor
-
-    return `translate(${baseX + deltaX}px, ${baseY + deltaY}px)`
+  const codeBlocks = [
+    {
+      title: "Professional Websites",
+      code: `function YourWebsite() {
+  return {
+    mobileOptimized: true,
+    loadSpeed: "lightning-fast",
+    customerConversion: "high",
+    searchRanking: "top-results"
   }
-
-  const icons = [
-    { Icon: Code, color: "from-blue-500 to-cyan-500", delay: 0, x: -180, y: -100 },
-    { Icon: Database, color: "from-purple-500 to-pink-500", delay: 0.1, x: 180, y: -120 },
-    { Icon: Globe, color: "from-green-500 to-emerald-500", delay: 0.2, x: -150, y: 150 },
-    { Icon: Cpu, color: "from-orange-500 to-amber-500", delay: 0.3, x: 160, y: 130 },
-    { Icon: Layers, color: "from-red-500 to-rose-500", delay: 0.4, x: 0, y: -180 },
-    { Icon: Zap, color: "from-yellow-500 to-amber-500", delay: 0.5, x: 0, y: 180 },
+}`,
+      color: "from-sky-400 to-blue-500"
+    },
+    {
+      title: "Business Systems", 
+      code: `const streamlineOperations = () => {
+  const automated = connectAllSystems()
+  const efficiency = eliminateManualWork()
+  return timeAndMoneySaved(thousands)
+}`,
+      color: "from-blue-500 to-indigo-600"
+    },
+    {
+      title: "Custom Applications",
+      code: `class YourBusinessApp {
+  constructor() {
+    this.userExperience = "intuitive"
+    this.performance = "reliable"
+    this.growth = "unlimited"
+  }
+}`,
+      color: "from-sky-500 to-cyan-500"
+    }
   ]
 
   return (
-    <section className="min-h-screen pt-32 pb-20 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 custom-gradient opacity-10 -z-20"></div>
-
-      {/* Animated background elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl animate-pulse top-0 -left-48" />
-        <div className="absolute w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl animate-pulse bottom-0 -right-48" />
-
-        {/* Animated grid pattern */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-
-        {/* Floating circles */}
-        <div className="absolute w-40 h-40 border border-primary/20 rounded-full top-1/4 left-1/4 animate-float [animation-delay:0s]" />
-        <div className="absolute w-24 h-24 border border-accent/20 rounded-full bottom-1/3 right-1/4 animate-float [animation-delay:1s]" />
-        <div className="absolute w-32 h-32 border border-primary/10 rounded-full top-1/3 right-1/3 animate-float [animation-delay:2s]" />
-
-        {/* Animated dots */}
-        <div className="absolute inset-0">
-          {Array.from({ length: 50 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1.5 h-1.5 bg-primary/30 rounded-full animate-pulse"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${3 + Math.random() * 3}s`,
-              }}
-            />
-          ))}
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50 text-slate-800 relative overflow-hidden">
+      {/* Animated code rain background */}
+      <div className="absolute inset-0 opacity-15">
+        {Array.from({ length: 100 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-sky-400 text-xs font-mono animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${2 + Math.random() * 3}s`,
+            }}
+          >
+            {['{}', '[]', '<>', '()', '//', '==', '=>', '&&'][Math.floor(Math.random() * 8)]}
+          </div>
+        ))}
       </div>
 
-      <div className="container mx-auto px-4 relative">
-        {/* Floating tech icons */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {icons.map(({ Icon, color, delay, x, y }, index) => (
-        <div
-          key={index}
-          className="absolute left-1/2 top-1/2 transition-transform duration-300 ease-out"
-          style={{ 
-            transform: calculateTransform(
-          window.innerWidth <= 640 ? x * 0.5 : x, 
-          window.innerWidth <= 640 ? y * 0.5 : y
-            ) 
-          }}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: delay, duration: 0.5 }}
-            className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${color} flex items-center justify-center shadow-lg`}
-          >
-            <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-          </motion.div>
-        </div>
-          ))}
-        </div>
+      {/* Grid background */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(14,165,233,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(14,165,233,0.1)_1px,transparent_1px)] bg-[size:2rem_2rem]" />
 
-        <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-6xl md:text-7xl font-['Playfair_Display'] font-bold mb-6 gradient-text leading-tight">
-              Empowering Businesses with Scalable Software Solutions
-            </h1>
-          </motion.div>
+      {/* Light orbs */}
+      <div className="absolute top-20 left-20 w-96 h-96 bg-sky-200/30 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl animate-pulse [animation-delay:2s]" />
 
-          <motion.p
-            className="text-xl text-foreground/80 mb-8 leading-relaxed font-['Inter'] font-extrabold"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            We help businesses achieve their goals with full-stack applications, seamless API integrations, and
-            custom-designed websites that drive growth and efficiency.
-          </motion.p>
-
-          <motion.p
-            className="text-lg text-foreground/60 mb-6 leading-relaxed italic font-['Inter']"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            Tailored digital solutions for businesses of all sizes—because your success is our priority.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex flex-wrap justify-center gap-4"
-          >
-            <a
-              href="#contact"
-              className="inline-flex items-center custom-gradient text-white px-8 py-4 rounded-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
-            >
-              Get Started
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-            </a>
-
-            <a
-              href="#portfolio"
-              className="inline-flex items-center bg-background border-2 border-primary/20 text-foreground px-8 py-4 rounded-full hover:shadow-lg hover:-translate-y-1 hover:bg-primary/5 transition-all duration-300"
-            >
-              View Our Work
-            </a>
-          </motion.div>
-
-          {/* Animated stats */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-8 mt-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <div className="text-center">
-              <div className="text-4xl font-bold gradient-text mb-1 font-['Playfair_Display']">20+</div>
-              <div className="text-foreground/60 text-sm font-['Inter']">Projects Completed</div>
+      <div className="container mx-auto px-6 py-20 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          
+          {/* Terminal header */}
+          <div className="flex items-center justify-center mb-12">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border border-sky-200 shadow-2xl">
+              <div className="flex items-center space-x-2 mb-3">
+                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-sky-400 rounded-full"></div>
+                <span className="text-slate-600 text-sm ml-4">business-growth.app</span>
+              </div>
+              <div className="font-mono text-sky-600 h-6">
+                {typedText}
+                <span className="animate-pulse">|</span>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold gradient-text mb-1 font-['Playfair_Display']">10+</div>
-              <div className="text-foreground/60 text-sm font-['Inter']">Happy Clients</div>
+          </div>
+
+          {/* Main content in creative layout */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+            
+            {/* Left side - Content */}
+            <div className="space-y-8">
+              <div className="flex items-center space-x-3 text-sky-600 font-mono text-sm">
+                <Terminal className="w-4 h-4" />
+                <span>// Technology that grows your business</span>
+              </div>
+
+              <h1 className="text-6xl lg:text-7xl font-black leading-none">
+                <span className="bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
+                  Solutions That
+                </span>
+                <br />
+                <span className="text-slate-800 relative">
+                  Scale Your
+                  <div className="absolute -bottom-2 left-0 w-full h-2 bg-gradient-to-r from-sky-400 to-blue-500 transform skew-x-12"></div>
+                </span>
+                <br />
+                <span className="text-slate-600">Business</span>
+              </h1>
+
+              <div className="space-y-4 text-xl text-slate-600 font-light max-w-lg">
+                <p>We create digital tools that work.</p>
+                <p>Custom websites. Streamlined systems. Real results.</p>
+                <p className="text-sky-600 font-medium">Every solution is built to increase your revenue and efficiency.</p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#contact"
+                  className="group inline-flex items-center bg-gradient-to-r from-sky-500 to-blue-600 text-white px-8 py-4 rounded-full hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                >
+                  Get Started
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                </a>
+
+                <a
+                  href="#portfolio"
+                  className="inline-flex items-center bg-white border-2 border-sky-300 text-slate-700 px-8 py-4 rounded-full hover:shadow-lg hover:-translate-y-1 hover:bg-sky-50 transition-all duration-300"
+                >
+                  View Our Work
+                </a>
+              </div>
+
+              {/* Stats in terminal style - using your original stats */}
+              <div className="grid grid-cols-3 gap-6 mt-12">
+                {[
+                  { label: "Projects Completed", value: "20+" },
+                  { label: "Happy Clients", value: "10+" },
+                  { label: "Years Experience", value: "3+" }
+                ].map((stat, i) => (
+                  <div key={i} className="text-center">
+                    <div className="font-mono text-2xl font-bold text-sky-600 mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="text-xs text-slate-500 uppercase tracking-wider">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold gradient-text mb-1 font-['Playfair_Display']">3+</div>
-              <div className="text-foreground/60 text-sm font-['Inter']">Years Experience</div>
+
+            {/* Right side - Interactive code blocks */}
+            <div className="space-y-6">
+              {codeBlocks.map((block, index) => (
+                <div
+                  key={index}
+                  className="group bg-white/60 backdrop-blur border border-sky-200 rounded-lg p-6 hover:bg-white/80 hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-500 transform hover:scale-105 hover:-rotate-1"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className={`font-bold bg-gradient-to-r ${block.color} bg-clip-text text-transparent`}>
+                      {block.title}
+                    </h3>
+                    <Sparkles className={`w-4 h-4 text-slate-400 group-hover:text-sky-500 transition-colors`} />
+                  </div>
+                  
+                  <pre className="text-sm text-slate-700 font-mono overflow-x-auto">
+                    <code>{block.code}</code>
+                  </pre>
+
+                  <div className="mt-4 flex space-x-1">
+                    <div className="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse [animation-delay:0.2s]"></div>
+                    <div className="w-2 h-2 bg-indigo-600 rounded-full animate-pulse [animation-delay:0.4s]"></div>
+                  </div>
+                </div>
+              ))}
             </div>
-          </motion.div>
+          </div>
+
+          {/* Bottom section with unique approach */}
+          <div className="text-center">
+            <div className="inline-block bg-white/80 backdrop-blur border border-sky-200 rounded-full px-8 py-3 mb-8 shadow-lg">
+              <span className="text-sky-600 font-mono text-sm">
+                &lt;/&gt; Trusted by businesses. Built for growth. Made simple.
+              </span>
+            </div>
+            
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              We turn complex technology into simple solutions that help your business thrive. 
+              No tech jargon. Just results that matter to your bottom line.
+            </p>
+          </div>
         </div>
 
-        {/* Decorative elements */}
-        <div className="absolute top-1/2 left-10 w-20 h-20 border-2 border-primary/20 rounded-full animate-spin-slow [animation-duration:15s]" />
-        <div className="absolute bottom-1/4 right-10 w-32 h-32 border-2 border-accent/20 rounded-full animate-spin-slow [animation-duration:20s]" />
+        {/* Floating elements */}
+        <div className="absolute top-20 right-20 w-32 h-32 border border-sky-400/30 rounded-full animate-spin [animation-duration:20s]"></div>
+        <div className="absolute bottom-20 left-20 w-24 h-24 border border-blue-500/30 rounded-full animate-spin [animation-duration:15s] [animation-direction:reverse]"></div>
       </div>
-    </section>
+    </div>
   )
 }
 
-export default Hero
+export default Hero;
