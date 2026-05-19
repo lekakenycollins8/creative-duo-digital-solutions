@@ -1,5 +1,6 @@
-import { Helmet } from "react-helmet-async"
 import { Link } from "react-router-dom"
+import SEOHead from "@/components/SEOHead"
+import { breadcrumbSchema, servicesPageSchema } from "@/lib/seo"
 import { ArrowRight, CheckCircle, Clock, Code, Cpu, Globe, HeartHandshake, Zap } from "lucide-react"
 import { Database, Cloud, Rocket } from "lucide-react"
 import { motion } from "framer-motion"
@@ -56,15 +57,19 @@ const ServicesPage = () => {
     <>
     <Navbar />
     <div className="min-h-screen bg-background pt-20">
-      {/* SEO Meta Tags */}
-      <Helmet>
-        <title>Our Services | CreativeDuo</title>
-        <meta
-          name="description"
-          content="Explore our comprehensive range of web development and design services tailored to help your business grow."
-        />
-        <meta name="keywords" content="web development, app development, API integration, web design, maintenance" />
-      </Helmet>
+      <SEOHead
+        title="Web Development & Software Engineering Services"
+        description="Full-stack web development, website design, API integration, and custom business systems — professionally delivered for startups, NGOs, and enterprises across Nairobi and Kenya."
+        canonical="/services"
+        keywords="web development services Kenya, full-stack development Nairobi, API integration Kenya, website design services Kenya, custom software development, business systems Kenya, web app development Nairobi"
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+          ]),
+          servicesPageSchema,
+        ]}
+      />
 
       {/* Hero Section */}
       {/* Services Section */}

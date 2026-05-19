@@ -1,5 +1,6 @@
-import { Helmet } from "react-helmet-async"
 import Navbar from "@/components/Navbar"
+import SEOHead from "@/components/SEOHead"
+import { breadcrumbSchema, faqSchema, pricingFaqs } from "@/lib/seo"
 import Pricing from "@/components/Pricing"
 import { ArrowRight, Check, Shield, Clock, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -12,15 +13,19 @@ const PricingPage = () => {
     <>
     <Navbar />
     <div className="min-h-screen bg-background pt-20">
-      {/* SEO Meta Tags */}
-      <Helmet>
-        <title>Pricing Plans | CreativeDuo</title>
-        <meta
-          name="description"
-          content="Explore our transparent pricing options tailored to fit your business needs. No hidden fees, just clear value."
-        />
-        <meta name="keywords" content="pricing, web development, design services, packages, affordable" />
-      </Helmet>
+      <SEOHead
+        title="Web Development Pricing & Packages in Kenya"
+        description="Transparent, value-driven pricing for web development and software services in Kenya. Flexible packages for every budget — from startup websites to enterprise platforms. No hidden fees."
+        canonical="/pricing"
+        keywords="web development pricing Kenya, website cost Nairobi, software development packages Kenya, affordable web design Kenya, website development quote Kenya"
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Pricing", path: "/pricing" },
+          ]),
+          faqSchema(pricingFaqs),
+        ]}
+      />
 
       {/* Pricing Section */}
       <div className="relative py-8 overflow-hidden">

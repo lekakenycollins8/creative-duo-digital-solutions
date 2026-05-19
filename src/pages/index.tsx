@@ -1,22 +1,24 @@
-import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio";
-// import About from "@/components/About";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Skills from "@/components/Skills";
 import Pricing from "@/components/Pricing";
 import FAQAccordion from "@/components/FAQAccordion/AccordionFAQ";
+import SEOHead from "@/components/SEOHead";
+import { organizationSchema, websiteSchema, localBusinessSchema } from "@/lib/seo";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Helmet>
-        <title>CreativeDuo Digital Solutions | Web Development & Design</title>
-        <meta name="description" content="CreativeDuo builds professional websites, custom applications, and digital solutions to help your business grow. Based in Nairobi, Kenya." />
-        <meta name="keywords" content="web development, web design, digital solutions, Nairobi, Kenya, CreativeDuo" />
-      </Helmet>
+      <SEOHead
+        title="Custom Web Development & Software Solutions in Nairobi, Kenya"
+        description="CreativeDuo builds custom websites, web applications, and business systems for startups, NGOs, and enterprises across Kenya. Expert full-stack development — based in Nairobi, serving East Africa."
+        canonical="/"
+        keywords="web development Kenya, web developer Nairobi, full-stack developer Kenya, custom software Nairobi, website design Kenya, API integration Kenya, business systems development, React developer Kenya, Next.js developer Nairobi"
+        schema={[organizationSchema, websiteSchema, localBusinessSchema]}
+      />
       <Navbar />
       <Hero />
       <Services />
@@ -24,7 +26,6 @@ const Index = () => {
       <Skills />
       <FAQAccordion />
       <Pricing />
-{/*       <About /> */}
       <Contact />
     </div>
   );

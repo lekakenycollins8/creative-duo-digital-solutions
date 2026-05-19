@@ -56,8 +56,11 @@ const About = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-accent/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <img
                     src={member.image}
-                    alt={member.name}
+                    alt={`${member.name} — ${member.role} at CreativeDuo Digital Solutions`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    width="128"
+                    height="128"
                   />
                 </div>
                 <div className="text-center md:text-left">

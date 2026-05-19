@@ -1,5 +1,6 @@
-import { Helmet } from "react-helmet-async"
 import Navbar from "@/components/Navbar"
+import SEOHead from "@/components/SEOHead"
+import { breadcrumbSchema } from "@/lib/seo"
 import Portfolio from "@/components/Portfolio"
 import { ArrowRight, Palette } from "lucide-react"
 import { motion } from "framer-motion"
@@ -12,15 +13,18 @@ const PortfolioPage = () => {
     <Navbar />
     {/* Main Container */}
     <div className="min-h-screen bg-background pt-20">
-      {/* SEO Meta Tags */}
-      <Helmet>
-        <title>Our Portfolio | CreativeDuo</title>
-        <meta
-          name="description"
-          content="Explore our diverse range of projects that showcase our expertise in web development, design, and digital solutions."
-        />
-        <meta name="keywords" content="portfolio, web development, design, projects, case studies" />
-      </Helmet>
+      <SEOHead
+        title="Portfolio & Client Case Studies — Web Development Projects"
+        description="Explore our portfolio of websites, web applications, and digital systems built for clients across Kenya and East Africa — healthcare, NGOs, tourism, education, logistics, and more."
+        canonical="/portfolio"
+        keywords="web development portfolio Kenya, case studies Nairobi, website projects Kenya, full-stack projects, web design portfolio East Africa, NGO website Kenya, healthcare web development"
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Portfolio", path: "/portfolio" },
+          ]),
+        ]}
+      />
 
     {/* Portfolio Section */}
     <div className="relative min-h-[40vh] py-8 overflow-hidden">

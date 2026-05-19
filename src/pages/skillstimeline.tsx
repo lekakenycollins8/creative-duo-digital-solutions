@@ -2,10 +2,24 @@ import Navbar from '@/components/Navbar';
 import Skills from '@/components/Skills';
 import Timeline from '@/components/Timeline';
 import { PaintBrush, CpuChip, PuzzlePiece, UserGroup } from '@/components/Icons';
+import SEOHead from '@/components/SEOHead';
+import { breadcrumbSchema } from '@/lib/seo';
 
 const SkillsTimelinePage = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Technical Skills & Development History"
+        description="Discover the technical expertise behind CreativeDuo — React, Next.js, Node.js, Python, Django, Flutter, PostgreSQL, and more. Passionate full-stack software engineers based in Nairobi, Kenya."
+        canonical="/skills-timeline"
+        keywords="software developer skills Kenya, full-stack developer Nairobi, React developer Kenya, Next.js developer, Node.js Kenya, Python developer Nairobi"
+        schema={[
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Skills & Timeline', path: '/skills-timeline' },
+          ]),
+        ]}
+      />
       <Navbar />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-20">
         {/* Hero Section */}

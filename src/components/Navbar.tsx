@@ -7,12 +7,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b border-border shadow-lg transition-all duration-300">
+    <nav aria-label="Main navigation" className="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b border-border shadow-lg transition-all duration-300">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center space-x-4 hover:scale-105 transition-transform">
             {/* Logo */}
-            <img src="/duo.svg" alt="Logo" className="h-12 w-12" />
+            <img src="/duo.svg" alt="CreativeDuo Digital Solutions" className="h-12 w-12" width="48" height="48" />
 
             {/* Text next to the logo */}
             <div className="flex flex-col text-left">
@@ -36,7 +36,7 @@ const Navbar = () => {
             <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
             <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
             <Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Services</Link>
-            <Link to="/skills-timeline" className="text-muted-foreground hover:text-primary transition-colors">Skills & Timeline</Link>
+            {/* <Link to="/skills-timeline" className="text-muted-foreground hover:text-primary transition-colors">Skills & Timeline</Link> */}
             <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link>
             <Link to="/hosting-plans" className="text-muted-foreground hover:text-primary transition-colors">Hosting Plans</Link>
             <ThemeToggle />
@@ -54,7 +54,7 @@ const Navbar = () => {
             <Link to="/" className="block text-muted-foreground hover:text-primary transition-colors py-2">Home</Link>
             <Link to="/portfolio" className="block text-muted-foreground hover:text-primary transition-colors py-2">Portfolio</Link>
             <Link to="/services" className="block text-muted-foreground hover:text-primary transition-colors py-2">Services</Link>
-            <Link to="/skills-timeline" className="block text-muted-foreground hover:text-primary transition-colors py-2">Skills & Timeline</Link>
+            {/* <Link to="/skills-timeline" className="block text-muted-foreground hover:text-primary transition-colors py-2">Skills & Timeline</Link> */}
             <Link to="/pricing" className="block text-muted-foreground hover:text-primary transition-colors py-2">Pricing</Link>
             <Link to="/hosting-plans" className="block text-muted-foreground hover:text-primary transition-colors py-2">Hosting Plans</Link>
             <Link

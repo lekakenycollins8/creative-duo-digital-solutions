@@ -1,6 +1,7 @@
 import { useState } from "react"
-import { Helmet } from "react-helmet-async"
 import { Link } from "react-router-dom"
+import SEOHead from "@/components/SEOHead"
+import { breadcrumbSchema, faqSchema, hostingFaqs } from "@/lib/seo"
 import { Check, ChevronRight, Star } from "lucide-react"
 import { motion } from "framer-motion"
 import { Server, Cloud, Rocket, Database, Zap, Shield } from "lucide-react"
@@ -88,15 +89,19 @@ export default function HostingPlans() {
   return (
     <>
       <Navbar />
-      {/* SEO Meta Tags */}
-      <Helmet>
-        <title>Hosting Plans | CreativeDuo</title>
-        <meta
-          name="description"
-          content="Choose from our range of hosting plans designed to meet your website needs. From starter to enterprise solutions."
-        />
-        <meta name="keywords" content="web hosting, hosting plans, website hosting, cloud hosting" />
-      </Helmet>
+      <SEOHead
+        title="Managed Web Hosting Plans in Kenya"
+        description="Reliable, affordable web hosting for businesses in Kenya. SSD storage, free SSL, 99.9% uptime guarantee, and expert technical support. Plans from KSh 350/month."
+        canonical="/hosting-plans"
+        keywords="web hosting Kenya, website hosting Nairobi, managed hosting Kenya, affordable hosting Kenya, SSD hosting Kenya, business hosting Nairobi"
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Hosting Plans", path: "/hosting-plans" },
+          ]),
+          faqSchema(hostingFaqs),
+        ]}
+      />
 
       {/* Main Content Container */}
       <div className="pt-20 min-h-screen bg-background">

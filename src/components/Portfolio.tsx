@@ -140,8 +140,12 @@ const Portfolio = () => {
                     <div className="relative h-64 overflow-hidden">
                       <img
                         src={project.image || "/placeholder.svg"}
-                        alt={project.title}
+                        alt={`${project.title} — ${project.category} project by CreativeDuo Digital Solutions`}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        loading="lazy"
+                        decoding="async"
+                        width="400"
+                        height="256"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
@@ -215,8 +219,10 @@ const Portfolio = () => {
                           <div className="absolute inset-0 custom-gradient opacity-10" />
                           <img
                             src={expandedProject.details.gallery[activeImageIndex] || "/placeholder.svg"}
-                            alt={expandedProject.title}
+                            alt={`${expandedProject.title} — gallery image ${activeImageIndex + 1}`}
                             className="w-full h-full object-cover"
+                            loading="lazy"
+                            decoding="async"
                           />
 
                           {expandedProject.details.gallery.length > 1 && (

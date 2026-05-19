@@ -4,7 +4,7 @@ export const projects = [
     title: "Kenyan By Blood Foundation Website",
     description: "A modern nonprofit platform that inspires hope, heritage, and empowerment by connecting Kenyans to life-saving blood donation initiatives.",
     image: "https://images.unsplash.com/photo-1615461065929-4f8ffed6ca40?q=80&w=2829&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    category: "Web Design & Development",
+    category: "NGO",
     details: {
       client: "Kenyan By Blood Foundation",
       duration: "7 weeks",
@@ -143,7 +143,7 @@ export const projects = [
     title: "CELANI Physiotherapy & Sports Injuries Clinic Website",
     description: "A premium physiotherapy and rehabilitation platform designed to strengthen patient trust, improve local visibility, and streamline appointment inquiries.",
     image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1600&auto=format&fit=crop",
-    category: "Healthcare",
+    category: "Healthcare & Wellness",
     details: {
       client: "CELANI Physiotherapy & Sports Injuries Clinic",
       duration: "5 Weeks",
@@ -214,7 +214,7 @@ export const projects = [
     title: "Physiotherapy Clinic Website",
     description: "Helping patients recover and regain mobility",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
-    category: "Health",
+    category: "Healthcare & Wellness",
     details: {
       client: "MotionWorks Physiotherapy",
       duration: "3 weeks",

@@ -25,7 +25,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section id="services" aria-label="Our Services" className="py-16 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 custom-gradient opacity-5 -z-10" />
       <div className="absolute w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl -top-48 -right-48 animate-pulse" />

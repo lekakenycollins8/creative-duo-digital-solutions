@@ -9,15 +9,16 @@ const __dirname = path.dirname(__filename);
 (async () => {
   const sitemap = new SitemapStream({ hostname: 'https://www.creativeduodigitalsolutions.com' });
 
+  const today = new Date().toISOString().split('T')[0];
+
   const links = [
-    { url: '/', changefreq: 'weekly', priority: 1.0 },
-    { url: '/portfolio', changefreq: 'monthly', priority: 0.8 },
-    { url: '/services', changefreq: 'monthly', priority: 0.8 },
-    { url: '/skills-timeline', changefreq: 'monthly', priority: 0.7 },
-    { url: '/contact', changefreq: 'monthly', priority: 0.7 },
-    { url: '/pricing', changefreq: 'monthly', priority: 0.7 },
-    { url: '/hosting-plans', changefreq: 'weekly', priority: 0.8 },
-    // Add all your known routes here
+    { url: '/', changefreq: 'weekly', priority: 1.0, lastmod: today },
+    { url: '/services', changefreq: 'monthly', priority: 0.9, lastmod: today },
+    { url: '/portfolio', changefreq: 'weekly', priority: 0.9, lastmod: today },
+    { url: '/pricing', changefreq: 'monthly', priority: 0.8, lastmod: today },
+    { url: '/hosting-plans', changefreq: 'monthly', priority: 0.8, lastmod: today },
+    { url: '/contact', changefreq: 'monthly', priority: 0.7, lastmod: today },
+    { url: '/skills-timeline', changefreq: 'monthly', priority: 0.6, lastmod: today },
   ];
 
   const writeStream = createWriteStream(path.resolve(__dirname, 'dist', 'sitemap.xml'));

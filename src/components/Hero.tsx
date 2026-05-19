@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { ArrowRight, Terminal, Database, Workflow, Sparkles, Play } from "lucide-react"
 
 const Hero = () => {
@@ -41,6 +41,18 @@ const Hero = () => {
     return () => clearInterval(typeInterval)
   }, [currentLine])
 
+  const codeRainItems = useMemo(
+    () =>
+      Array.from({ length: 50 }).map((_, i) => ({
+        symbol: ['{}', '[]', '<>', '()', '//', '==', '=>', '&&'][i % 8],
+        left: `${(i * 2.04) % 100}%`,
+        top: `${(i * 3.73) % 100}%`,
+        delay: `${(i % 5) * 1}s`,
+        duration: `${2 + (i % 3)}s`,
+      })),
+    []
+  )
+
   const codeBlocks = [
     {
       title: "Professional Websites",
@@ -77,21 +89,25 @@ const Hero = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50 dark:from-slate-900 dark:via-slate-800 dark:to-sky-950 text-slate-800 dark:text-slate-100 relative overflow-hidden">
-      {/* Animated code rain background */}
-      <div className="absolute inset-0 opacity-15">
-        {Array.from({ length: 100 }).map((_, i) => (
+    <section
+      id="home"
+      aria-label="CreativeDuo Digital Solutions — Web Development Agency in Nairobi, Kenya"
+      className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50 dark:from-slate-900 dark:via-slate-800 dark:to-sky-950 text-slate-800 dark:text-slate-100 relative overflow-hidden"
+    >
+      {/* Deterministic code rain background — stable positions prevent CLS */}
+      <div className="absolute inset-0 opacity-15" aria-hidden="true">
+        {codeRainItems.map((item, i) => (
           <div
             key={i}
             className="absolute text-sky-400 text-xs font-mono animate-pulse"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${2 + Math.random() * 3}s`,
+              left: item.left,
+              top: item.top,
+              animationDelay: item.delay,
+              animationDuration: item.duration,
             }}
           >
-            {['{}', '[]', '<>', '()', '//', '==', '=>', '&&'][Math.floor(Math.random() * 8)]}
+            {item.symbol}
           </div>
         ))}
       </div>
@@ -235,7 +251,7 @@ const Hero = () => {
         <div className="absolute top-20 right-20 w-32 h-32 border border-sky-400/30 rounded-full animate-spin [animation-duration:20s]"></div>
         <div className="absolute bottom-20 left-20 w-24 h-24 border border-blue-500/30 rounded-full animate-spin [animation-duration:15s] [animation-direction:reverse]"></div>
       </div>
-    </div>
+    </section>
   )
 }
 

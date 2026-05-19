@@ -1,5 +1,6 @@
-import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
+import SEOHead from "@/components/SEOHead";
+import { breadcrumbSchema, faqSchema, contactFaqs } from "@/lib/seo";
 import Contact from "@/components/Contact";
 import { motion } from "framer-motion";
 import { Mail, MessageCircle, ArrowRight } from "lucide-react";
@@ -10,12 +11,19 @@ export default function ContactPage() {
     <>
       <Navbar />
       <div className="min-h-screen bg-background pt-20">
-      {/* SEO Meta Tags */}
-      <Helmet>
-        <title>Contact Us | CreativeDuo</title>
-        <meta name="description" content="Get in touch with CreativeDuo for your web development, design, and hosting needs. We're here to help bring your digital vision to life." />
-        <meta name="keywords" content="contact, web development, design services, hosting, CreativeDuo" />
-      </Helmet>
+      <SEOHead
+        title="Contact Us — Start Your Web Development Project in Nairobi"
+        description="Ready to build something remarkable? Get in touch with the CreativeDuo team in Nairobi, Kenya. We're available for web development, custom software, and digital solution projects across East Africa."
+        canonical="/contact"
+        keywords="contact web developer Nairobi, hire web developer Kenya, web development inquiry Kenya, software developer contact Nairobi, get a website quote Kenya"
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+          faqSchema(contactFaqs),
+        ]}
+      />
       
       {/* Hero Section */}
         <div className="relative py-8 overflow-hidden">

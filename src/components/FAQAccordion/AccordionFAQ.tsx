@@ -1,53 +1,41 @@
 import React from "react"
+import { Helmet } from "react-helmet-async"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { ChevronDown } from 'lucide-react'
-
-const FAQs = [
-  {
-    question: "How much do you charge for a project?",
-    answer: "Our pricing varies based on the project's scope and requirements. Contact me for a customized quote."
-  },
-  {
-    question: "Are there additional costs beyond the quoted price?",
-    answer: "Additional costs may arise if the project scope changes significantly or requires third-party services."
-  },
-  {
-    question: "Do you provide progress updates during the project?",
-    answer: "Yes, We provide regular updates and share milestones to ensure transparency throughout the process."
-  },
-  {
-    question: "Do you provide maintenance after project completion?",
-    answer: "Yes, We offer post-launch maintenance and support plans for all my projects."
-  },
-  {
-    question: "Do you handle hosting and domain setup?",
-    answer: "Yes, We can assist with hosting, domain setup, and website deployment."
-  },
-]
+import { faqSchema, generalFaqs } from "@/lib/seo"
 
 const FAQAccordion = () => {
   return (
-    <div className="w-full max-w-3xl mx-auto p-6 rounded-xl bg-gradient-to-br from-background to-sky-50 dark:to-sky-950 shadow-lg border border-border">
-      <h2 className="text-3xl font-bold text-center mb-6 gradient-text">Frequently Asked Questions</h2>
-      <Accordion type="single" collapsible className="w-full space-y-4">
-        {FAQs.map((faq, index) => (
-          <AccordionItem 
-            key={index} 
-            value={`faq-${index}`} 
-            className="bg-background/60 backdrop-blur-sm rounded-lg overflow-hidden border border-border/50"
-          >
-            <AccordionTrigger className="flex justify-between items-center w-full px-6 py-4 text-left text-lg font-medium text-foreground hover:bg-muted transition-colors duration-200">
-              {faq.question}
-              <ChevronDown className="h-5 w-5 text-primary transition-transform duration-200" />
-            </AccordionTrigger>
-            <AccordionContent className="px-6 py-4 text-foreground/80">
-              {faq.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
-    </div>
+    <section id="faq" aria-label="Frequently Asked Questions" className="py-16 px-4">
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema(generalFaqs))}
+        </script>
+      </Helmet>
+      <div className="w-full max-w-3xl mx-auto p-6 rounded-xl bg-gradient-to-br from-background to-sky-50 dark:to-sky-950 shadow-lg border border-border">
+        <h2 className="text-3xl font-bold text-center mb-2 gradient-text">Frequently Asked Questions</h2>
+        <p className="text-center text-muted-foreground mb-8 text-sm">
+          Everything you need to know about working with CreativeDuo Digital Solutions.
+        </p>
+        <Accordion type="single" collapsible className="w-full space-y-4">
+          {generalFaqs.map((faq, index) => (
+            <AccordionItem
+              key={index}
+              value={`faq-${index}`}
+              className="bg-background/60 backdrop-blur-sm rounded-lg overflow-hidden border border-border/50"
+            >
+              <AccordionTrigger className="flex justify-between items-center w-full px-6 py-4 text-left text-base font-medium text-foreground hover:bg-muted transition-colors duration-200">
+                {faq.question}
+                <ChevronDown className="h-5 w-5 text-primary transition-transform duration-200 shrink-0 ml-2" />
+              </AccordionTrigger>
+              <AccordionContent className="px-6 py-4 text-foreground/80 leading-relaxed">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </div>
+    </section>
   )
 }
 
