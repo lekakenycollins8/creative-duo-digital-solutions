@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect, useRef } from "react"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
@@ -8,15 +6,17 @@ import { motion, AnimatePresence } from "framer-motion"
 import { X, ArrowUpRight, Eye } from "lucide-react"
 import { projects } from "@/data/projects"
 
+type Project = typeof projects[0]
+
 const categories = ["All", ...new Set(projects.map((project) => project.category))]
 
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState("All")
-  const [expandedProject, setExpandedProject] = useState(null)
+  const [expandedProject, setExpandedProject] = useState<Project | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
-  const expandedRef = useRef(null)
-  const projectRefs = useRef({})
+  const expandedRef = useRef<HTMLDivElement | null>(null)
+  const projectRefs = useRef<Record<string, HTMLDivElement | null>>({})
 
   useEffect(() => {
     // Simulate loading delay
@@ -42,7 +42,7 @@ const Portfolio = () => {
     (project) => selectedCategory === "All" || project.category === selectedCategory,
   )
 
-  const handleProjectClick = (project) => {
+  const handleProjectClick = (project: Project) => {
     // If clicking the same project that's already expanded, collapse it
     if (expandedProject === project) {
       setExpandedProject(null)
@@ -53,7 +53,7 @@ const Portfolio = () => {
     }
   }
 
-  const handleViewDetailsClick = (e, project) => {
+  const handleViewDetailsClick = (e: React.MouseEvent, project: Project) => {
     e.stopPropagation() // Prevent the card click event
     setExpandedProject(project)
     setActiveImageIndex(0)

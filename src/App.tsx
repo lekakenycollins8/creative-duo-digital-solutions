@@ -11,6 +11,7 @@ import SkillsTimelinePage from "./pages/skillstimeline";
 import PricingPage from "./pages/pricing";
 import HostingPlans from "./pages/hosting-plans.tsx";
 import ContactPage from "./pages/contact.tsx";
+import NotFound from "./pages/not-found";
 
 
 const App = () => (
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/hosting-plans" element={<HostingPlans />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>

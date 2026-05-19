@@ -54,8 +54,8 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="space-y-8 bg-white/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/20">
-            <div className="flex items-start space-x-4 group hover:bg-white/50 p-4 rounded-xl transition-all duration-300">
+          <div className="space-y-8 bg-card/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-border">
+            <div className="flex items-start space-x-4 group hover:bg-muted/50 p-4 rounded-xl transition-all duration-300">
               <div className="p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl group-hover:scale-110 transition-transform">
                 <Mail className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
               </div>
@@ -67,7 +67,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex items-start space-x-4 group hover:bg-white/50 p-4 rounded-xl transition-all duration-300">
+            <div className="flex items-start space-x-4 group hover:bg-muted/50 p-4 rounded-xl transition-all duration-300">
               <div className="p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl group-hover:scale-110 transition-transform">
                 <Phone className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
               </div>
@@ -77,13 +77,13 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex items-start space-x-4 group hover:bg-white/50 p-4 rounded-xl transition-all duration-300">
+            <div className="flex items-start space-x-4 group hover:bg-muted/50 p-4 rounded-xl transition-all duration-300">
               <div className="p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl group-hover:scale-110 transition-transform">
                 <MapPin className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
               </div>
               <div>
                 <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors">Visit Us</h3>
-                <p className="text-gray-600">Pena Towers Kitengela, Nairobi, Kenya</p>
+                <p className="text-muted-foreground">Pena Towers Kitengela, Nairobi, Kenya</p>
               </div>
             </div>
 
@@ -114,7 +114,7 @@ const Contact = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="space-y-6 bg-white/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-white/20"
+            className="space-y-6 bg-card/50 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-border"
           >
             <div>
               <input
@@ -124,7 +124,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white text-gray-800 transition-all duration-300"
+                className="w-full px-4 py-3 rounded-xl border border-input focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-background text-foreground transition-all duration-300"
               />
             </div>
             <div>
@@ -134,7 +134,7 @@ const Contact = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white text-gray-800 transition-all duration-300"
+                className="w-full px-4 py-3 rounded-xl border border-input focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-background text-foreground transition-all duration-300"
               />
             </div>
             <div>
@@ -144,7 +144,7 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white text-gray-800 transition-all duration-300"
+                className="w-full px-4 py-3 rounded-xl border border-input focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-background text-foreground transition-all duration-300"
               ></textarea>
             </div>
             <button

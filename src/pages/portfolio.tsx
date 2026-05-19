@@ -11,7 +11,7 @@ const PortfolioPage = () => {
     <>
     <Navbar />
     {/* Main Container */}
-    <div className="min-h-screen bg-background pt-4">
+    <div className="min-h-screen bg-background pt-20">
       {/* SEO Meta Tags */}
       <Helmet>
         <title>Our Portfolio | CreativeDuo</title>
@@ -23,7 +23,7 @@ const PortfolioPage = () => {
       </Helmet>
 
     {/* Portfolio Section */}
-    <div className="relative min-h-[40vh] py-12 md:py-24 overflow-hidden">
+    <div className="relative min-h-[40vh] py-8 overflow-hidden">
        <div className="absolute inset-0 -z-10">
       <div className="absolute w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -top-32 -left-32 animate-pulse" />
       <div className="absolute w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl -bottom-32 -right-32 animate-pulse" />
@@ -85,7 +85,7 @@ const PortfolioPage = () => {
       <Portfolio />
 
       {/* Project Highlights Section */}
-      <div className="container mx-auto px-4 py-16 max-w-6xl">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="text-center mb-12 animate-scale-in">
           <h2 className="text-3xl font-bold mb-4 gradient-text font-['Playfair_Display']">Project Highlights</h2>
           <p className="text-foreground/80 max-w-2xl mx-auto font-['Inter']">
@@ -218,7 +218,7 @@ const PortfolioPage = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="container mx-auto px-4 py-16 max-w-6xl">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="bg-card rounded-2xl p-8 md:p-12 relative overflow-hidden animate-scale-in">
           <div className="absolute inset-0 custom-gradient opacity-10"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">

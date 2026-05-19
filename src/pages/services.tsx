@@ -55,7 +55,7 @@ const ServicesPage = () => {
   return (
     <>
     <Navbar />
-    <div className="min-h-screen bg-background pt-4">
+    <div className="min-h-screen bg-background pt-20">
       {/* SEO Meta Tags */}
       <Helmet>
         <title>Our Services | CreativeDuo</title>
@@ -68,7 +68,7 @@ const ServicesPage = () => {
 
       {/* Hero Section */}
       {/* Services Section */}
-      <div className="relative py-16 md:py-24 bg-gradient-to-b from-background via-primary/5 to-background">
+      <div className="relative py-8 bg-gradient-to-b from-background via-primary/5 to-background">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-dot-pattern opacity-10" />
           <motion.div 
@@ -115,13 +115,13 @@ const ServicesPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16 max-w-6xl">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Services Section */}
         <Services />
 
         {/* Why Choose Us Section */}
-        <div className="mt-24 animate-fade-up">
-          <div className="text-center mb-16">
+        <div className="mt-8 animate-fade-up">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4 gradient-text font-['Playfair_Display']">Why Choose Us?</h2>
             <p className="text-foreground/80 max-w-2xl mx-auto font-['Inter']">
               We combine technical expertise with creative thinking to deliver solutions that exceed expectations.
@@ -188,8 +188,8 @@ const ServicesPage = () => {
         </div>
 
         {/* Our Process Section */}
-        <div className="mt-24 animate-fade-up">
-          <div className="text-center mb-16">
+        <div className="mt-8 animate-fade-up">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4 gradient-text font-['Playfair_Display']">Our Process</h2>
             <p className="text-foreground/80 max-w-2xl mx-auto font-['Inter']">
               A structured approach that ensures successful project delivery from start to finish.
@@ -214,7 +214,7 @@ const ServicesPage = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-24 bg-card rounded-2xl p-8 md:p-12 relative overflow-hidden animate-scale-in">
+        <div className="mt-8 bg-card rounded-2xl p-8 md:p-12 relative overflow-hidden animate-scale-in">
           <div className="absolute inset-0 custom-gradient opacity-10"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl">

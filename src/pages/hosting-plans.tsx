@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { Helmet } from "react-helmet-async"
 import { Link } from "react-router-dom"
@@ -91,7 +89,6 @@ export default function HostingPlans() {
     <>
       <Navbar />
       {/* SEO Meta Tags */}
-      <br></br><br></br>
       <Helmet>
         <title>Hosting Plans | CreativeDuo</title>
         <meta
@@ -181,7 +178,7 @@ export default function HostingPlans() {
       </div>
 
         {/* Pricing Section */}
-        <div className="container mx-auto px-4 py-16 max-w-6xl">
+        <div className="container mx-auto px-4 py-8 max-w-6xl">
           <div className="text-center mb-12 animate-scale-in">
             <h2 className="text-3xl font-bold mb-4 gradient-text font-['Playfair_Display']">
               Simple, Transparent Pricing
@@ -292,7 +289,7 @@ export default function HostingPlans() {
         </div>
 
         {/* Features Section */}
-        <div className="bg-muted py-16">
+        <div className="bg-muted py-8">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-12 animate-scale-in">
               <h2 className="text-3xl font-bold mb-4 gradient-text font-['Playfair_Display']">All Plans Include</h2>
@@ -361,7 +358,7 @@ export default function HostingPlans() {
         </div>
 
         {/* FAQ Section */}
-        <div className="container mx-auto px-4 py-16 max-w-6xl">
+        <div className="container mx-auto px-4 py-8 max-w-6xl">
           <div className="text-center mb-12 animate-scale-in">
             <h2 className="text-3xl font-bold mb-4 gradient-text font-['Playfair_Display']">
               Frequently Asked Questions

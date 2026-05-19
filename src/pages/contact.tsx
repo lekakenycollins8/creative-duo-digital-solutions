@@ -4,12 +4,12 @@ import Contact from "@/components/Contact";
 import { motion } from "framer-motion";
 import { Mail, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-background pt-4">
+    <>
       <Navbar />
+      <div className="min-h-screen bg-background pt-20">
       {/* SEO Meta Tags */}
       <Helmet>
         <title>Contact Us | CreativeDuo</title>
@@ -18,7 +18,7 @@ export default function ContactPage() {
       </Helmet>
       
       {/* Hero Section */}
-        <div className="relative min-h-[50vh] py-16 md:py-24 mt-16 overflow-hidden">
+        <div className="relative py-8 overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 -z-10">
             <div className="absolute w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -top-32 -left-32 animate-pulse" />
@@ -63,10 +63,10 @@ export default function ContactPage() {
                 className="bg-gradient-to-r from-primary to-accent text-white hover:scale-105 transition-transform"
                 asChild
                 >
-                <Link to="/contact">
+                <a href="#contact">
                     Begin Your Project
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
                 </Button>
             </motion.div>
 
@@ -84,10 +84,12 @@ export default function ContactPage() {
         </div>
       
       {/* Contact Section */}
-      <Contact />
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
+        <Contact />
+      </div>
       
       {/* FAQ Section */}
-      <div className="container mx-auto px-4 py-16 max-w-6xl">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="text-center mb-12 animate-scale-in">
           <h2 className="text-3xl font-bold mb-4 gradient-text font-['Playfair_Display']">Frequently Asked Questions</h2>
           <p className="text-foreground/80 max-w-2xl mx-auto font-['Inter']">
@@ -125,6 +127,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

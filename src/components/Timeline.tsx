@@ -88,7 +88,7 @@ const Timeline = () => {
                 <div className={`ml-16 md:ml-0 w-full md:w-5/12 ${
                   index % 2 === 0 ? 'md:mr-auto md:pr-24' : 'md:ml-auto md:pl-24'
                 }`}>
-                  <div className="bg-white dark:bg-slate-800 p-6 md:p-8 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700">
+                  <div className="bg-card p-6 md:p-8 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-300 border border-border">
                     <h3 className="text-xl md:text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
                       {item.title}
                     </h3>

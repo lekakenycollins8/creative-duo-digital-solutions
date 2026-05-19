@@ -130,7 +130,7 @@ const Pricing = () => {
                 whileTap={{ scale: 0.98 }}
                 className={`w-full py-3 px-6 rounded-lg font-medium transition-shadow ${
                   tier.isPopular
-                    ? 'bg-white text-primary hover:shadow-xl'
+                    ? 'bg-white text-slate-900 hover:shadow-xl'
                     : 'custom-gradient text-white hover:shadow-xl'
                 }`}
               >

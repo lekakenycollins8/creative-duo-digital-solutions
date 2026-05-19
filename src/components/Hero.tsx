@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { ArrowRight, Terminal, Database, Workflow, Sparkles, Play } from "lucide-react"
 
@@ -79,7 +77,7 @@ const Hero = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50 text-slate-800 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50 dark:from-slate-900 dark:via-slate-800 dark:to-sky-950 text-slate-800 dark:text-slate-100 relative overflow-hidden">
       {/* Animated code rain background */}
       <div className="absolute inset-0 opacity-15">
         {Array.from({ length: 100 }).map((_, i) => (
@@ -110,12 +108,12 @@ const Hero = () => {
           
           {/* Terminal header */}
           <div className="flex items-center justify-center mb-12">
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-4 border border-sky-200 shadow-2xl">
+            <div className="bg-background/80 backdrop-blur-sm rounded-lg p-4 border border-sky-200 dark:border-sky-700 shadow-2xl">
               <div className="flex items-center space-x-2 mb-3">
                 <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                 <div className="w-3 h-3 bg-sky-400 rounded-full"></div>
-                <span className="text-slate-600 text-sm ml-4">business-growth.app</span>
+                <span className="text-muted-foreground text-sm ml-4">business-growth.app</span>
               </div>
               <div className="font-mono text-sky-600 h-6">
                 {typedText}
@@ -139,15 +137,15 @@ const Hero = () => {
                   Solutions That
                 </span>
                 <br />
-                <span className="text-slate-800 relative">
+                <span className="text-foreground relative">
                   Scale Your
                   <div className="absolute -bottom-2 left-0 w-full h-2 bg-gradient-to-r from-sky-400 to-blue-500 transform skew-x-12"></div>
                 </span>
                 <br />
-                <span className="text-slate-600">Business</span>
+                <span className="text-foreground/70">Business</span>
               </h1>
 
-              <div className="space-y-4 text-xl text-slate-600 font-light max-w-lg">
+              <div className="space-y-4 text-xl text-foreground/70 font-light max-w-lg">
                 <p>We create digital tools that work.</p>
                 <p>Custom websites. Streamlined systems. Real results.</p>
                 <p className="text-sky-600 font-medium">Every solution is built to increase your revenue and efficiency.</p>
@@ -181,7 +179,7 @@ const Hero = () => {
                     <div className="font-mono text-2xl font-bold text-sky-600 mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-xs text-slate-500 uppercase tracking-wider">
+                    <div className="text-xs text-muted-foreground uppercase tracking-wider">
                       {stat.label}
                     </div>
                   </div>
@@ -194,7 +192,7 @@ const Hero = () => {
               {codeBlocks.map((block, index) => (
                 <div
                   key={index}
-                  className="group bg-white/60 backdrop-blur border border-sky-200 rounded-lg p-6 hover:bg-white/80 hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-500 transform hover:scale-105 hover:-rotate-1"
+                  className="group bg-background/60 backdrop-blur border border-sky-200 dark:border-sky-700 rounded-lg p-6 hover:bg-background/80 hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-500 transform hover:scale-105 hover:-rotate-1"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -204,7 +202,7 @@ const Hero = () => {
                     <Sparkles className={`w-4 h-4 text-slate-400 group-hover:text-sky-500 transition-colors`} />
                   </div>
                   
-                  <pre className="text-sm text-slate-700 font-mono overflow-x-auto">
+                  <pre className="text-sm text-foreground/80 font-mono overflow-x-auto">
                     <code>{block.code}</code>
                   </pre>
 
@@ -220,13 +218,13 @@ const Hero = () => {
 
           {/* Bottom section with unique approach */}
           <div className="text-center">
-            <div className="inline-block bg-white/80 backdrop-blur border border-sky-200 rounded-full px-8 py-3 mb-8 shadow-lg">
+            <div className="inline-block bg-background/80 backdrop-blur border border-sky-200 dark:border-sky-700 rounded-full px-8 py-3 mb-8 shadow-lg">
               <span className="text-sky-600 font-mono text-sm">
                 &lt;/&gt; Trusted by businesses. Built for growth. Made simple.
               </span>
             </div>
             
-            <p className="text-slate-600 max-w-2xl mx-auto">
+            <p className="text-foreground/70 max-w-2xl mx-auto">
               We turn complex technology into simple solutions that help your business thrive. 
               No tech jargon. Just results that matter to your bottom line.
             </p>

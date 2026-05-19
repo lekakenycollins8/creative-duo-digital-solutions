@@ -11,7 +11,7 @@ const PricingPage = () => {
   return (
     <>
     <Navbar />
-    <div className="min-h-screen bg-background pt-4">
+    <div className="min-h-screen bg-background pt-20">
       {/* SEO Meta Tags */}
       <Helmet>
         <title>Pricing Plans | CreativeDuo</title>
@@ -23,7 +23,7 @@ const PricingPage = () => {
       </Helmet>
 
       {/* Pricing Section */}
-      <div className="relative py-16 md:py-24 overflow-hidden">
+      <div className="relative py-8 overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute w-[800px] h-[800px] bg-primary/10 rounded-full blur-3xl -top-48 -left-48" />
           <div className="absolute inset-0 bg-grid-pattern opacity-5" />
@@ -68,7 +68,7 @@ const PricingPage = () => {
       <Pricing />
 
       {/* Features Section */}
-      <div className="container mx-auto px-4 py-16 max-w-6xl">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="text-center mb-12 animate-scale-in">
           <h2 className="text-3xl font-bold mb-4 gradient-text font-['Playfair_Display']">Why Choose Our Services</h2>
           <p className="text-foreground/80 max-w-2xl mx-auto font-['Inter']">
@@ -133,7 +133,7 @@ const PricingPage = () => {
       </div>
 
       {/* FAQ Section */}
-      <div className="bg-muted py-16">
+      <div className="bg-muted py-8">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12 animate-scale-in">
             <h2 className="text-3xl font-bold mb-4 gradient-text font-['Playfair_Display']">
@@ -188,7 +188,7 @@ const PricingPage = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="container mx-auto px-4 py-16 max-w-6xl">
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="bg-card rounded-2xl p-8 md:p-12 relative overflow-hidden animate-scale-in">
           <div className="absolute inset-0 custom-gradient opacity-10"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">

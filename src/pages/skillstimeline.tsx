@@ -7,9 +7,9 @@ const SkillsTimelinePage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-20">
         {/* Hero Section */}
-        <header className="max-w-3xl mb-16 animate-fade-in">
+        <header className="max-w-3xl mb-8 animate-fade-in">
           <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             Expertise & Evolution
           </h1>
@@ -22,14 +22,14 @@ const SkillsTimelinePage = () => {
         <Skills />
 
         {/* Timeline Section */}
-        <section className="space-y-16">
+        <section className="space-y-8">
           <div className="max-w-4xl mx-auto">
             <Timeline />
           </div>
         </section>
 
         {/* Core Skills Grid */}
-        <section className="mt-24">
+        <section className="mt-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-semibold mb-8 flex items-center gap-3">
               <span className="w-6 h-6 bg-accent rounded-full" />

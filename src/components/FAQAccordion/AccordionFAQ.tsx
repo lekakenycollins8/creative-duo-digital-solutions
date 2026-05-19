@@ -1,5 +1,3 @@
-"use client"
-
 import React from "react"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
@@ -30,20 +28,20 @@ const FAQs = [
 
 const FAQAccordion = () => {
   return (
-    <div className="w-full max-w-3xl mx-auto p-6 rounded-xl bg-gradient-to-br from-white to-sky-200 shadow-lg">
-      <h2 className="text-3xl font-bold text-center mb-6 text-sky-800">Frequently Asked Questions</h2>
+    <div className="w-full max-w-3xl mx-auto p-6 rounded-xl bg-gradient-to-br from-background to-sky-50 dark:to-sky-950 shadow-lg border border-border">
+      <h2 className="text-3xl font-bold text-center mb-6 gradient-text">Frequently Asked Questions</h2>
       <Accordion type="single" collapsible className="w-full space-y-4">
         {FAQs.map((faq, index) => (
           <AccordionItem 
             key={index} 
             value={`faq-${index}`} 
-            className="bg-white bg-opacity-60 backdrop-blur-sm rounded-lg overflow-hidden"
+            className="bg-background/60 backdrop-blur-sm rounded-lg overflow-hidden border border-border/50"
           >
-            <AccordionTrigger className="flex justify-between items-center w-full px-6 py-4 text-left text-lg font-medium text-sky-900 hover:bg-sky-100 transition-colors duration-200">
+            <AccordionTrigger className="flex justify-between items-center w-full px-6 py-4 text-left text-lg font-medium text-foreground hover:bg-muted transition-colors duration-200">
               {faq.question}
-              <ChevronDown className="h-5 w-5 text-sky-600 transition-transform duration-200" />
+              <ChevronDown className="h-5 w-5 text-primary transition-transform duration-200" />
             </AccordionTrigger>
-            <AccordionContent className="px-6 py-4 text-sky-800">
+            <AccordionContent className="px-6 py-4 text-foreground/80">
               {faq.answer}
             </AccordionContent>
           </AccordionItem>

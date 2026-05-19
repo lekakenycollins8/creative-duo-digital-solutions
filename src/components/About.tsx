@@ -49,7 +49,7 @@ const About = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
-              className="group relative bg-white/50 dark:bg-black/20 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-white/20 transition-all duration-300"
+              className="group relative bg-card/50 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-border transition-all duration-300"
             >
               <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
                 <div className="relative w-32 h-32 rounded-xl overflow-hidden flex-shrink-0">
