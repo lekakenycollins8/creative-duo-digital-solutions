@@ -154,15 +154,27 @@ const Portfolio = () => {
                         </Badge>
                       </div>
 
-                      <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex gap-2">
                         <Button
                           variant="outline"
                           size="sm"
-                          className="bg-white/20 backdrop-blur-sm text-white border-white/20 hover:bg-white/30 w-full"
+                          className="bg-white/20 backdrop-blur-sm text-white border-white/20 hover:bg-white/30 flex-1"
                           onClick={(e) => handleViewDetailsClick(e, project)}
                         >
                           {expandedProject === project ? "Hide Details" : "View Details"}
                           <Eye className="ml-2 h-4 w-4" />
+                        </Button>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="bg-white/20 backdrop-blur-sm text-white border-white/20 hover:bg-white/30 flex-1"
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            window.open(project.details.link, "_blank")
+                          }}
+                        >
+                          View Project
+                          <ArrowUpRight className="ml-2 h-4 w-4" />
                         </Button>
                       </div>
                     </div>
