@@ -30,7 +30,7 @@ export const projects = [
       client: "Safari Centre Mall",
       duration: "7 Weeks",
       technologies: ["Next.js", "TypeScript", "TailwindCSS", "Shadcn UI", "Framer Motion", "Node.js"],
-      link: "https://www.safaricentres.com",
+      link: "https://safari-centre.vercel.app/",
       gallery: [
         "https://images.unsplash.com/photo-1701278773098-9cfd25e8cde3?fit=crop&crop=faces"
       ],
